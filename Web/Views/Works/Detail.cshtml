@@ -1,0 +1,70 @@
+﻿@model Web.Models.WorkDefinitionCreateModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">İş Tanımı Detayları</h3>
+            <h3 class="box-title">@Html.ValidationSummary()</h3>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Title) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" value="@Html.ValueFor(x=>x.Title)" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Description) (*)</label>
+                        <div class="col-sm-10">
+                            <textarea class="textarea" name="Description" placeholder="İş Tanımı Açıklaması"
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" disabled>
+                                @Html.ValueFor(x=>x.Description)
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.ProjectName) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="@Html.ValueFor(x=>x.ProjectName)" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.ExpireDate) (*)</label>
+                        <div class="col-sm-10">
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" name="ExpireDate" id="ExpireDate" class="form-control" value="@Html.ValueFor(x=>x.ExpireDate)" disabled>
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Works/Index" class="btn btn-primary">Geri</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+        CKEDITOR.replace('editor1')
+        $('.textarea').wysihtml5()
+    })
+</script>
+<script>
+    var todayDate = new Date().getDate();
+    $('.datepicker').datepicker({
+        format: 'yyyy/MM/dd/HH/mm/ss',
+        startDate: 'today',
+    });
+</script>
+

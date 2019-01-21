@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1BE2374-D136-4127-B1F1-D70AB88A0267}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccessLayer</RootNamespace>
+    <AssemblyName>DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdoModel\Action.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\AspNetRoles.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\AspNetUserClaims.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\AspNetUserLogins.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\AspNetUsers.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\C__MigrationHistory.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\DelayModel.cs" />
+    <Compile Include="AdoModel\Menu.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\Notes.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\PM.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\PM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\PM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PM.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\Projects.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\ResultModel.cs" />
+    <Compile Include="AdoModel\RoleMenu.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\ServerInfo.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\SmtpModel.cs" />
+    <Compile Include="AdoModel\SP_Action_Result.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\SP_STATISTIC_Result.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\sysdiagrams.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\WorkDefinition.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BLL.cs" />
+    <Compile Include="DLL\Base.cs" />
+    <Compile Include="DLL\DB_Action.cs" />
+    <Compile Include="DLL\DB_AspNetRoles.cs" />
+    <Compile Include="DLL\DB_AspNetUsers.cs" />
+    <Compile Include="DLL\DB_Menu.cs" />
+    <Compile Include="DLL\DB_Notes.cs" />
+    <Compile Include="DLL\DB_Projects.cs" />
+    <Compile Include="DLL\DB_ServerInfo.cs" />
+    <Compile Include="DLL\DB_Statistics.cs" />
+    <Compile Include="DLL\DB_WorkDefinition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\MailTemplates.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="AdoModel\PM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="AdoModel\PM.edmx.diagram">
+      <DependentUpon>PM.edmx</DependentUpon>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AdoModel\PM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PM.edmx</DependentUpon>
+      <LastGenOutput>PM.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AdoModel\PM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PM.edmx</DependentUpon>
+      <LastGenOutput>PM.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

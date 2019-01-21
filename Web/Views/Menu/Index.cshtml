@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Web.Models.MenuViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="modalDiv" class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Ana Menüler</h3>
+                </div>
+                <div class="box">
+                    <div class="box-header col-sm-3">                        
+                        <a href="/Menu/Create" class="btn btn-primary" style="margin-top:8px;">
+                            <i class="fas fa-plus">
+                                Yeni Menü Tanımla
+                            </i>
+                        </a>                       
+                        @Html.ValidationSummary()
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Name)</th>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Icon)</th>
+                                <th>@Html.LabelFor(x=>x.FirstOrDefault().Rank)</th>
+                                <th>@Html.LabelFor(x=>x.FirstOrDefault().Nested)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="container">
+                            @foreach (var item in Model.Where(x=>x.Nested=="0").ToList())
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td><i class="@item.Icon"></i></td>
+                                    <td>@item.Rank</td>
+                                    <td>@Model.Where(x=>x.Nested==item.Id).ToList().Count</td>
+                                    <td>
+                                        <a href="/Menu/Edit?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-pencil-alt">
+                                                Düzenle
+                                            </i>
+                                        </a>
+                                        <a href="/Menu/Delete?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-trash">
+                                                Sil
+                                            </i>
+                                        </a>
+                                        <a href="/Menu/SubMenu?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-ellipsis-h">
+                                                Alt Menüler
+                                            </i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Name)</th>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Icon)</th>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Rank)</th>
+                                <th>@Html.LabelFor(x => x.FirstOrDefault().Nested)</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,38 @@
+﻿@model Web.Models.ServerInfoViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Yeni Parametre Oluştur</h3>
+            <h3 class="box-title">@Html.ValidationSummary()</h3>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">@Html.LabelFor(x => x.key_str)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="key_str" placeholder="Anahtarın Adını Giriniz">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.value_str)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="value_str" placeholder="Anahtarın Değerini Giriniz">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Server/Index" class="btn btn-primary">Vazgeç</a>
+                    <button type="submit" class="btn btn-success pull-right">Ekle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

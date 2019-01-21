@@ -1,0 +1,97 @@
+﻿@model Web.Models.AdminDashModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>@Model.ACTION_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.ACTION_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-key"></i>
+                </div>
+                <a href="/Users/Index" class="small-box-footer">Kullanıcıları Görüntüle <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>@Model.NOTE_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.NOTE_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <a href="/Notebook/Index" class="small-box-footer">Notlarımı Görüntüle <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>@Model.PARAMETER_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.PARAMETER_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <a href="/Server/Index" class="small-box-footer">Sunucu Parametreleri <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3>@Model.PROJECT_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.PROJECT_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <a href="/Project/Index" class="small-box-footer">Projelerim <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>@Model.USER_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.USER_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <a href="/Users/Index" class="small-box-footer">Kullanıcıları Görüntüle <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>@Model.WORKDEF_COUNT</h3>
+
+                    <p>@Html.LabelFor(x => x.WORKDEF_COUNT)</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <a href="/Works/Index" class="small-box-footer">İş Tanımlamalarımı Görüntüle <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

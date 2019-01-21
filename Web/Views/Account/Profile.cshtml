@@ -1,0 +1,45 @@
+﻿@model Web.Models.LoginViewModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Profilimi Düzenle</h3>
+            <h4>@Html.ValidationSummary()</h4>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">E-Posta Adresiniz</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Email" value="@Html.ValueFor(x=>x.Email)" disabled/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Şifre</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Password" placeholder="Yeni Şifrenizi Giriniz">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Tekrar-Şifre</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Re_Password" placeholder="Yeni Şifrenizi Tekrar Giriniz">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Home/Index" class="btn btn-primary">Vazgeç</a>
+                    <button type="submit" class="btn btn-success pull-right">Düzenle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
