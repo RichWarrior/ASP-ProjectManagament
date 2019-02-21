@@ -1,0 +1,79 @@
+﻿@model Web.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Proje Yönetim Sistemi Giriş Yap</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="@Url.Content("~/Assets/bootstrap/dist/css/bootstrap.min.css")">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="@Url.Content("~/Assets/font-awesome/css/font-awesome.min.css")">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="@Url.Content("~/Assets/Ionicons/css/ionicons.min.css")">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="@Url.Content("~/Assets/css/AdminLTE.min.css")">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="@Url.Content("~/Assets/plugins/iCheck/square/blue.css")">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="/Home/Index"><b>Project</b>Managament</a>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Lütfen Oturum Bilgilerinizi Giriniz</p>
+            <p class="login-box-msg">@Html.ValidationSummary()</p>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group has-feedback">
+                    <input type="email" name="Email" class="form-control" placeholder="E-Posta Adresinizi Giriniz">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" name="Password" class="form-control" placeholder="Şifrenizi Griniz">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" name="RememberMe">@Html.LabelFor(x => x.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Giriş Yap</button>
+                    </div>
+                </div>
+            }
+            <a href="/Account/ForgotPassword">Şifremi Unuttum</a><br>
+            <a href="/Account/Register" class="text-center">Hesabınız Yok Mu? Üye Olun</a>
+        </div>
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery 3 -->
+    <script src="@Url.Content("~/Assets/jquery/dist/jquery.min.js")"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="@Url.Content("~/Assets/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <!-- iCheck -->
+    <script src="@Url.Content("~/Assets/plugins/iCheck/icheck.min.js")"></script>    
+    <script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' /* optional */
+    });
+  });
+    </script>
+</body>
+</html>
+

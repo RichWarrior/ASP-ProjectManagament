@@ -3,7 +3,11 @@ using log4net;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
 
 namespace Web.Controllers
@@ -20,7 +24,7 @@ namespace Web.Controllers
         public BaseController()
         {
             _roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
-            Bll = new BLL();            
+            Bll = new BLL();
         }
 
         public BaseController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -53,6 +57,30 @@ namespace Web.Controllers
             }
         }
 
+        //public void ClearCache()
+        //{
+        //    try
+        //    {
+        //        List<string> keys = new List<string>();
+
+        //        IDictionaryEnumerator enumerator = new Cache().GetEnumerator();
+
+        //        while (enumerator.MoveNext())
+        //        {
+        //            keys.Add(enumerator.Key.ToString());
+        //        }
+        //        for (int i = 0; i < keys.Count; i++)
+        //        {
+        //            var _cache = new Cache();
+        //            _cache.Remove(keys[i]);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Log.Error(ex);                
+        //    }
+        //}
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -73,7 +101,7 @@ namespace Web.Controllers
                     _roleManager.Dispose();
                     _roleManager = null;
                 }
-                if(Bll != null)
+                if (Bll != null)
                 {
                     Bll.Dispose();
                     Bll = null;

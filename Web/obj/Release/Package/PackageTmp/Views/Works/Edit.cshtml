@@ -1,0 +1,126 @@
+﻿@model Web.Models.WorkDefinitionCreateModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ranks = new List<Web.Models.Rank>();
+    ranks.Add(new Web.Models.Rank {
+        value = "1",
+        Key = "Düşük"
+    });
+    ranks.Add(new Web.Models.Rank
+    {
+        value = "2",
+        Key = "Orta"
+    });
+    ranks.Add(new Web.Models.Rank
+    {
+        value = "3",
+        Key = "Yüksek"
+    });
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">İş Tanımını Düzenle</h3>
+            <h3 class="box-title">@Html.ValidationSummary()</h3>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Title) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" placeholder="İş Tanım Başlığı" value="@Html.ValueFor(x=>x.Title)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Description) (*)</label>
+                        <div class="col-sm-10">
+                            <textarea class="textarea" name="Description" placeholder="İş Tanımı Açıklaması"
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">@Html.ValueFor(x=>x.Description)</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.ProjectName) (*)</label>
+                        <div class="col-sm-10">
+                            <select name="ProjectId" class="form-control">
+                                @foreach (var item in Model.projects)
+                                {
+                                    if (Model.ProjectId == item.Id)
+                                    {
+                                        <option value="@item.Id" selected>@item.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.completed)</label>
+                        <div class="col-sm-10">
+                            @if ((bool)Model.completed)
+                            {
+                                <input type="checkbox" name="completed" checked="checked" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="completed" />
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.rank) (*)</label>
+                        <div class="col-sm-10">
+                            <select name="rank" class="form-control">
+                                @foreach (var item in ranks)
+                                {
+                                    if (item.value == Model.rank.ToString())
+                                    {
+                                        <option value="@item.value" selected>@item.Key</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.value">@item.Key</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.ExpireDate) (*)</label>
+                        <div class="col-sm-10">
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" name="ExpireDate" id="ExpireDate" class="form-control" value="@Html.ValueFor(x=>x.ExpireDate)">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Works/Index" class="btn btn-primary">Vazgeç</a>
+                    <button type="submit" class="btn btn-warning pull-right">Düzenle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+        CKEDITOR.replace('editor1')
+        $('.textarea').wysihtml5()
+    })
+</script>
+<script>
+    var todayDate = new Date().getDate();
+    $('.datepicker').datepicker({
+        format: 'yyyy/MM/dd/HH/mm/ss',
+        startDate: 'today',
+    });
+</script>

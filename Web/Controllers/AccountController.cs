@@ -21,7 +21,7 @@ namespace Web.Controllers
         // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login()
-        {
+        {            
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Home");
@@ -159,15 +159,15 @@ namespace Web.Controllers
                     ModelState.AddModelError("", "Böyle Bir Kullanıcı Zaten Mevcut!");
                 }
                 else
-                {
+                {                    
                     ApplicationUser u = new ApplicationUser();
+                    u.Id = Guid.NewGuid().ToString();
                     u.Email = model.email;
-                    u.UserName = u.Email;
+                    u.UserName = u.Email;                    
                     var registered = await UserManager.CreateAsync(u, model.password);
                     if (registered.Succeeded)
                     {
-                        var registeredUser = await UserManager.FindByEmailAsync(model.email);
-                        var addToRole = await UserManager.AddToRoleAsync(registeredUser.Id, "Kullanıcı");
+                        var addToRole = await UserManager.AddToRoleAsync(u.Id, "Kullanici");
                         if (addToRole.Succeeded)
                         {
                             ModelState.AddModelError("", "Kullanıcı Başarıyla Kayıt Edildi!");

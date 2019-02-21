@@ -1,0 +1,47 @@
+﻿@model Web.Models.NoteCreateModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">İlgili Notu Silmek İstediğinize Emin Misiniz?</h3>
+            <h3 class="box-title">@Html.ValidationSummary()</h3>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Title) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Title" placeholder="Not Başlığı" value="@Html.ValueFor(x=>x.Title)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Description) (*)</label>
+                        <div class="col-sm-10">
+                            <textarea class="textarea" name="Description" placeholder="Not Açıklaması"
+                                      style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" rows="50">@Html.ValueFor(x=>x.Description)</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Notebook/Index" class="btn btn-primary">Vazgeç</a>
+                    <button type="submit" class="btn btn-warning pull-right">Düzenle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(function () {
+        CKEDITOR.replace('editor1')
+        $('.textarea').wysihtml5()
+    })
+</script>
+
+
+

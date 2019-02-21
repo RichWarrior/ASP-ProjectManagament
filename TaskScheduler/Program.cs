@@ -26,7 +26,7 @@ namespace TaskScheduler
             }
             else
             {
-                Startup _startup = new Startup();
+                ServiceBase.Run(new ServiceBase[] { new PasswordNotification(),new WorkDefNotification()});
             }
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Web.Attiributes;
 using Web.Models;
 
 namespace Web.Controllers
@@ -58,6 +59,7 @@ namespace Web.Controllers
                 });
                 if (dbResult.success)
                 {
+                    //this.ClearCache();
                     return RedirectToAction("Index");
                 }
             }
@@ -89,6 +91,7 @@ namespace Web.Controllers
             var dbModel = await Bll.DB_Menu().Delete(id);
             if (dbModel.success)
             {
+                //this.ClearCache();
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "Menü Silinemedi");
@@ -129,7 +132,10 @@ namespace Web.Controllers
                     Rank = model.Rank
                 });
                 if (dbModel.success)
-                    return RedirectToAction("Index");
+                {
+                    //this.ClearCache();
+                    return RedirectToAction("Index");                    
+                }                    
             }
             ModelState.AddModelError("", "Menü Düzenlenemedi!");
             return View(model);
@@ -180,7 +186,7 @@ namespace Web.Controllers
                         Id = item.Id,
                         Name = item.Name
                     });
-                }
+                }           
                 return View(result);
             }
         }
@@ -202,6 +208,7 @@ namespace Web.Controllers
                 });
                 if(dbModel.success)
                 {
+                    //this.ClearCache();
                     return RedirectToAction("Index");
                 }
             }

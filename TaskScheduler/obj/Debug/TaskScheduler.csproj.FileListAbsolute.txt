@@ -17,3 +17,5 @@ C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Debug\log4net.xml
 C:\Projects\ASP-ProjectManagament\TaskScheduler\obj\Debug\TaskScheduler.csproj.CopyComplete
 C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Debug\FarukSahin.MailService.dll
 C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Debug\FarukSahin.MailService.pdb
+C:\Projects\ASP-ProjectManagament\TaskScheduler\obj\Debug\TaskScheduler.ProjectInstaller.resources
+C:\Projects\ASP-ProjectManagament\TaskScheduler\obj\Debug\TaskScheduler.csproj.GenerateResource.cache

@@ -107,6 +107,12 @@
     <Compile Include="AdoModel\SP_Action_Result.cs">
       <DependentUpon>PM.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdoModel\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdoModel\sp_helpdiagrams_Result.cs">
+      <DependentUpon>PM.tt</DependentUpon>
+    </Compile>
     <Compile Include="AdoModel\SP_STATISTIC_Result.cs">
       <DependentUpon>PM.tt</DependentUpon>
     </Compile>
@@ -138,13 +144,14 @@
     <None Include="AdoModel\PM.edmx.diagram">
       <DependentUpon>PM.edmx</DependentUpon>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="AdoModel\PM.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

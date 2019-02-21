@@ -1,0 +1,163 @@
+﻿@model Web.Models.WorkDefinitionViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+        function OnFilterChanged(){
+            var project_id = document.getElementById('projects').value;
+            var count = document.getElementById('countBox').value;
+            var html = '';
+            $('#container').empty();
+            $.ajax({
+                type: "GET",
+                url:"/Works/Filter?project_id="+project_id+'&count='+count,
+                contentType:"application/json; charset=utf-8",
+                dataType:"json",
+                success:function(msg){
+                   $.each(msg,function(item,value){
+                        html+='<tr>';
+                        html+='<td>'+value.ProjectName+'</td>';
+                        html+='<td>'+value.Title+'</td>';
+                        html+='<td>'+value.ExpireDateView+'</td>';
+                        if(value.rank===1){
+                            html+='<td>Düşük</td>';
+                        }
+                        if(value.rank===2){
+                            html+='<td>Orta</td>';
+                        }
+                        if(value.rank===3){
+                            html+='<td>Yüksek</td>';
+                        }
+                        html+='<td>';                
+                        html+='<a href="/Works/Detail?id='+value.Id+'" class="btn btn-primary" style="margin-left:6px;"><i class="fas fa-ellipsis-h">Detay</i></a>';
+                        html+='<a href="/Works/Edit?id='+value.Id+'" class="btn btn-primary" style="margin-left:6px;"><i class="fas fa-pencil-alt">Düzenle</i></a>';
+                        html+='<a href="/Works/Delete?id='+value.Id+'" class="btn btn-primary" style="margin-left:6px;"><i class="fas fa-trash">Sil</i></a>';
+                        if(value.IsCompleted){
+                            html+='<a href="#" class="btn btn-success" style="margin-left:6px;"><i class="fa-check-circle">İş Tanımı Tamamlandı!</i></a>';
+                        }else{
+                            html+='<a href="#" class="btn btn-danger" style="margin-left:6px;"><i class="fas fa-check-circle">İş Tanımı Tamamlanmadı!</i></a>';
+                        }
+                        html+='</td>';
+                        html+='</tr>';
+                   });
+                    $('#container').append(html);
+                }
+            })
+        }
+</script>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="modalDiv" class="box">
+                <div class="box-header">
+                    <h3 class="box-title">İş Tanımlamalarım</h3>
+                </div>
+                <div class="box">
+                    <div class="box-header col-sm-3 form-horizontal">
+                        <h3 class="box-title">Projelerim</h3>
+                        <select id="projects" class="form-control" onchange="OnFilterChanged()">
+                            @foreach (var item in Model.projects)
+                            {
+                                <option value="@item.Id">@item.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="box-header col-sm-3 form-horizontal">
+                        <h3 class="box-title">Görüntüle</h3>
+                        <select id="countBox" class="form-control" onchange="OnFilterChanged()">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="20">20</option>
+                            <option value="Hepsi">Hepsi</option>
+                        </select>
+                    </div>
+                    <div class="box-header col-xs-12">
+                        <a href="/Works/Create" class="btn btn-primary" style="margin-top:8px;">
+                            <i class="fas fa-plus">
+                                Yeni İş Tanımla
+                            </i>
+                        </a>
+                        @Html.ValidationSummary()
+                    </div>
+                </div>
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().ProjectName)</th>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().Title)</th>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().ExpireDate)</th>
+                                <th>@Html.LabelFor(x=>x.works.FirstOrDefault().rank)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="container">
+                            @foreach (var item in Model.works.ToList())
+                            {
+                                <tr>
+                                    <td>@item.ProjectName</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.ExpireDate.ToShortDateString()</td>                                      
+                                    @if (item.rank == 1) {
+                                        <td>Düşük</td>
+                                    }else if (item.rank == 2)
+                                    {
+                                        <td>Orta</td>
+                                    }
+                                    else {
+                                        <td>Yüksek</td>
+                                    }
+                                    <td>
+                                        <a href="/Works/Detail?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-ellipsis-h">
+                                                Detay
+                                            </i>
+                                        </a>
+                                        <a href="/Works/Edit?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-pencil-alt">
+                                                Düzenle
+                                            </i>
+                                        </a>
+                                        <a href="/Works/Delete?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-trash">
+                                                Sil
+                                            </i>
+                                        </a>
+                                        @if (item.completed)
+                                        {
+                                            <a href="#" class="btn btn-success">
+                                                <i class="fas fa-check-circle">
+                                                    İş Tanımı Tamamlandı!
+                                                </i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#" class="btn btn-danger">
+                                                <i class="fas fa-check-circle">
+                                                    İş Tanımı Tamamlanmadı!
+                                                </i>
+                                            </a>
+
+                                        }                                       
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().ProjectName)</th>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().Title)</th>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().ExpireDate)</th>
+                                <th>@Html.LabelFor(x => x.works.FirstOrDefault().rank)</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

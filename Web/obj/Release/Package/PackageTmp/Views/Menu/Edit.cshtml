@@ -1,0 +1,56 @@
+﻿@model Web.Models.MenuViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="col-md-6">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Yeni Menü Oluştur</h3>
+            <h3 class="box-title">@Html.ValidationSummary()</h3>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Name) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Name" value="@Html.ValueFor(x=>x.Name)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Icon) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Icon" value="@Html.ValueFor(x=>x.Icon)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Controller) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Controller" value="@Html.ValueFor(x=>x.Controller)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Action) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="Action" value="@Html.ValueFor(x=>x.Action)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">@Html.LabelFor(x => x.Rank) (*)</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="Rank" value="@Html.ValueFor(x=>x.Rank)">
+                        </div>
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <a href="/Menu/Index" class="btn btn-primary">Vazgeç</a>
+                    <button type="submit" class="btn btn-success pull-right">Güncelle</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

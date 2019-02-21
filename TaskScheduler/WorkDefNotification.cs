@@ -35,6 +35,7 @@ namespace TaskScheduler
             Console.WriteLine(String.Format("[!]{0}-WorkDefNotification Çalıştırıldı!", DateTime.Now));
             var keys = await bll.GetServerParameter<SmtpModel>();
             var delays = await bll.GetServerParameter<DelayModel>();
+            Log.Info("WorkDef Notification Çalıştı ve Propertyler Okundu!");
             if (!String.IsNullOrEmpty(keys.exceptionMessage) || !String.IsNullOrEmpty(delays.exceptionMessage))
             {
                 Console.WriteLine("Propertyler Okunumadı!");

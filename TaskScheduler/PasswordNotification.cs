@@ -32,9 +32,11 @@ namespace TaskScheduler
             /* TODO: Sunucu Mail Bilgileri Çekilecek ve Şifresini Unutan veya Sisteme
              * Yöneticiler Tarafından Eklenen Kullanıcılara Şifreleri Mail Olarak Gönderilecek
              * */
+            
             Console.WriteLine(String.Format("[!]{0}-PasswordNotification Çalıştırıldı!", DateTime.Now));
             var smtpInfo = await bll.GetServerParameter<SmtpModel>();
             var delays = await bll.GetServerParameter<DelayModel>();
+            Log.Info("Password Notification Çalıştı ve Propertyler Okundu!");
             if (!String.IsNullOrEmpty(smtpInfo.exceptionMessage) || !String.IsNullOrEmpty(delays.exceptionMessage))
             {
                 Console.WriteLine("Propertyler Okunamadı");

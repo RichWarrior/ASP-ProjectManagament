@@ -1,0 +1,107 @@
+﻿@model Web.Models.ResultItemList<Web.Models.ServerInfoViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+        function OnFilterChanged(){
+            var args = document.getElementById('countBox').value;
+            var html = '';
+            $('#container').empty();
+            $.ajax({
+                type: "GET",
+                url:"/Server/Filter?args="+args,
+                contentType:"application/json; charset=utf-8",
+                dataType:"json",
+                success:function(msg){
+                   $.each(msg.data,function(item,value){
+                        html+='<tr>';
+                        html+='<td>'+value.key_str+'</td>';
+                        html+='<td>'+value.value_str+'</td>';
+                        html+='<td>';
+                        html+='<a href="/Server/Edit?id='+value.Id+'" class="btn btn-primary"><i class="fas fa-pencil-alt">Düzenle</i></a>';
+                        html+='<a href="/Server/Delete?id='+value.Id+'" class="btn btn-primary" style="margin-left:8px;"><i class="fas fa-trash">Sil</i></a>';
+                        html+='</td>';
+                        html+='</tr>';
+                   });
+                    $('#container').append(html);
+                }
+            })
+        }
+</script>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="modalDiv" class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Sistem Parametreleri</h3>                   
+                </div>
+                <div class="box">
+                    <div class="box-header col-sm-3">
+                        <h4 class="box-title">Görüntüle</h4>
+                        <select id="countBox" class="form-control" onchange="OnFilterChanged()">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="Hepsi">Hepsi</option>
+                        </select>                       
+                        <a href="/Server/Create" class="btn btn-primary" style="margin-top:8px;">
+                            <i class="fas fa-plus">
+                                Yeni Parametre Tanımla
+                            </i>
+                        </a>
+                        <a href="/Server/UpdateVersion" class="btn btn-primary" style="margin-top:8px;" onclick="OnFilterChanged()">
+                            <i class="fas fa-refresh">
+                                Versiyon Güncelle
+                            </i>
+                        </a>
+                        @Html.ValidationSummary()
+                    </div>
+                </div>                
+                <div class="box-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.data.FirstOrDefault().key_str)</th>
+                                <th>@Html.LabelFor(x => x.data.FirstOrDefault().value_str)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="container">
+                            @foreach (var item in Model.data)
+                            {
+                                <tr>
+                                    <td>@item.key_str</td>
+                                    <td>@item.value_str</td>
+                                    <td>
+                                        <a href="/Server/Edit?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-pencil-alt">
+                                                Düzenle
+                                            </i>
+                                        </a>                                        
+                                        <a href="/Server/Delete?id=@item.Id" class="btn btn-primary">
+                                            <i class="fas fa-trash">
+                                                Sil
+                                            </i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }                          
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>@Html.LabelFor(x => x.data.FirstOrDefault().key_str)</th>
+                                <th>@Html.LabelFor(x => x.data.FirstOrDefault().value_str)</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>               
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

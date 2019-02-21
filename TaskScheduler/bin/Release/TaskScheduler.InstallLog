@@ -1,0 +1,72 @@
+﻿'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi yükleniyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managamanet TaskScheduler hizmeti yükleniyor...
+Application günlüğünde Project Managamanet TaskScheduler EventLog kaynağı oluşturuluyor...
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi geri alınıyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managamanet TaskScheduler kaynağı için olay günlüğü önceki duruma döndürülüyor.
+System.Diagnostics.EventLogInstaller yükleyicisinin Geri Alma aşamasında özel durum oluştu.
+System.Security.SecurityException: Kaynak bulunamadı; ancak olay günlüklerinin bazılarında veya hiçbirinde arama yapılamadı. Erişilemeyen günlükler: Security, State.
+Yüklemenin Geri Alma aşamasında özel durum oluştu. Bu özel durum yoksayılacak ve geri alma devam edecek. Ancak geri alma tamamlandıktan sonra makine ilk durumuna tamamen dönemeyebilir.
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi yükleniyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler hizmeti yükleniyor...
+Application günlüğünde Project Managament Task Scheduler EventLog kaynağı oluşturuluyor...
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi geri alınıyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler kaynağı için olay günlüğü önceki duruma döndürülüyor.
+System.Diagnostics.EventLogInstaller yükleyicisinin Geri Alma aşamasında özel durum oluştu.
+System.Security.SecurityException: Kaynak bulunamadı; ancak olay günlüklerinin bazılarında veya hiçbirinde arama yapılamadı. Erişilemeyen günlükler: Security, State.
+Yüklemenin Geri Alma aşamasında özel durum oluştu. Bu özel durum yoksayılacak ve geri alma devam edecek. Ancak geri alma tamamlandıktan sonra makine ilk durumuna tamamen dönemeyebilir.
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi yükleniyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler hizmeti yükleniyor...
+Application günlüğünde Project Managament Task Scheduler EventLog kaynağı oluşturuluyor...
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi geri alınıyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler kaynağı için olay günlüğü önceki duruma döndürülüyor.
+System.Diagnostics.EventLogInstaller yükleyicisinin Geri Alma aşamasında özel durum oluştu.
+System.Security.SecurityException: Kaynak bulunamadı; ancak olay günlüklerinin bazılarında veya hiçbirinde arama yapılamadı. Erişilemeyen günlükler: Security, State.
+Yüklemenin Geri Alma aşamasında özel durum oluştu. Bu özel durum yoksayılacak ve geri alma devam edecek. Ancak geri alma tamamlandıktan sonra makine ilk durumuna tamamen dönemeyebilir.
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi yükleniyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler hizmeti yükleniyor...
+Application günlüğünde Project Managament Task Scheduler EventLog kaynağı oluşturuluyor...
+'C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe' derlemesi geri alınıyor.
+Etkilenen parametreler şunlardır:
+   logtoconsole = 
+   i = 
+   assemblypath = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.exe
+   logfile = C:\Projects\ASP-ProjectManagament\TaskScheduler\bin\Release\TaskScheduler.InstallLog
+Project Managament Task Scheduler kaynağı için olay günlüğü önceki duruma döndürülüyor.
+System.Diagnostics.EventLogInstaller yükleyicisinin Geri Alma aşamasında özel durum oluştu.
+System.Security.SecurityException: Kaynak bulunamadı; ancak olay günlüklerinin bazılarında veya hiçbirinde arama yapılamadı. Erişilemeyen günlükler: Security, State.
+Yüklemenin Geri Alma aşamasında özel durum oluştu. Bu özel durum yoksayılacak ve geri alma devam edecek. Ancak geri alma tamamlandıktan sonra makine ilk durumuna tamamen dönemeyebilir.

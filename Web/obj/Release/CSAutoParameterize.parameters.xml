@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=DESKTOP-0LRHBP4;Initial Catalog=PM;User ID=sa;Password=03102593" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\ASP-ProjectManagament\\Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="PM-Web.config Connection String" description="PM Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/AdoModel.PM.csdl|res://*/AdoModel.PM.ssdl|res://*/AdoModel.PM.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=pmfaruksahin.database.windows.net;initial catalog=pm;user id=faruksahin;password=03102593Faruk@;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\ASP-ProjectManagament\\Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PM']/@connectionString" />
+  </parameter>
+</parameters>

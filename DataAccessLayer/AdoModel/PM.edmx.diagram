@@ -4,30 +4,30 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="43d8b375361d4e87941d1581bfdd1847" Name="Diagram1">
-        <EntityTypeShape EntityType="PMModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.Action" Width="1.5" PointX="5.25" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.AspNetUsers" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.Menu" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.RoleMenu" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.ServerInfo" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PMModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="ad407fa7891e434ba1b90fd81578cc05" Name="Diagram1">
+        <EntityTypeShape EntityType="PMModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.Action" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.AspNetUsers" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.Menu" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.Notes" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.Projects" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.RoleMenu" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.ServerInfo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PMModel.WorkDefinition" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
         <AssociationConnector Association="PMModel.FK_Action_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="PMModel.FK_RoleMenu_AspNetRoles" ManuallyRouted="false" />
         <AssociationConnector Association="PMModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="PMModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="PMModel.FK_Notes_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="PMModel.FK_Projects_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="PMModel.FK_WorkDefinition_AspNetUsers" ManuallyRouted="false" />
         <AssociationConnector Association="PMModel.FK_RoleMenu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="PMModel.FK_WorkDefinition_Projects" ManuallyRouted="false" />
         <AssociationConnector Association="PMModel.AspNetUserRoles" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="PMModel.Projects" Width="1.5" PointX="5.25" PointY="11.5" />
-        <AssociationConnector Association="PMModel.FK_Projects_AspNetUsers" />
-        <EntityTypeShape EntityType="PMModel.Notes" Width="1.5" PointX="5.25" PointY="0.5" />
-        <AssociationConnector Association="PMModel.FK_Notes_AspNetUsers" />
-        <EntityTypeShape EntityType="PMModel.WorkDefinition" Width="1.5" PointX="7.5" PointY="10.25" />
-        <AssociationConnector Association="PMModel.FK_WorkDefinition_AspNetUsers" />
-        <AssociationConnector Association="PMModel.FK_WorkDefinition_Projects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

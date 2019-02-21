@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Web.Attiributes;
 using Web.Models;
 
 namespace Web.Controllers
@@ -17,7 +18,7 @@ namespace Web.Controllers
         /// Kullanıcı Yetkilerine Göre Menüleri Json Formatında Geriye Döndürür.
         /// </summary>
         /// <returns></returns>
-        [OutputCache(Duration =60)]
+        [OutputCache(Duration =15)]
         public async Task<JsonResult> GetMenuByRoleId()
         {
             if (User.Identity.IsAuthenticated)

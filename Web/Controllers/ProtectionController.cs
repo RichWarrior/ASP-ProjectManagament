@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Web.Attiributes;
 using Web.Models;
 
 namespace Web.Controllers
@@ -56,7 +57,7 @@ namespace Web.Controllers
             return View(result);
         }
         [HttpGet]
-        public async Task<ActionResult> Delete(string id,string locationId)
+        public async Task<ActionResult> Delete(string id, string locationId)
         {
             var db = await Bll.DB_Menu().FindByIdAsync(locationId);
             if (!String.IsNullOrEmpty(db.exceptionMessage))
@@ -78,6 +79,7 @@ namespace Web.Controllers
             var request = await Bll.DB_Menu().DeletePoint(id, locationId);
             if (request.success)
             {
+                //this.ClearCache();
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("","Erişim Noktası Silinemedi");
@@ -127,6 +129,7 @@ namespace Web.Controllers
                 });
                 if (request.success)
                 {
+                    //this.ClearCache();
                     return RedirectToAction("Index");
                 }
                

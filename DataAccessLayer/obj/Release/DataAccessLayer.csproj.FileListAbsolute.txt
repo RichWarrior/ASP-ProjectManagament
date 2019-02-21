@@ -1,0 +1,14 @@
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\DataAccessLayer.dll.config
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\DataAccessLayer.dll
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\EntityFramework.dll
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\log4net.dll
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\EntityFramework.xml
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\bin\Release\log4net.xml
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\obj\Release\DataAccessLayer.csprojAssemblyReference.cache
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CopyComplete
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\obj\Release\DataAccessLayer.dll
+C:\Projects\ASP-ProjectManagament\DataAccessLayer\obj\Release\DataAccessLayer.pdb
